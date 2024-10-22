@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+
+.sm-bk-blue{
+    background: #003B7A;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+html {
+	scroll-behavior: smooth;
+}

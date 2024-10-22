@@ -795,42 +795,6 @@
                     </div>
                   </div>
 
-                   {{-- Beneficios --}}
-                {{-- <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                    <p class="mt-12 text-xl leading-8 text-black">Beneficios</p>
-                    <div class="container mx-auto">
-                        <ul role="list"
-                            class="grid grid-cols-1 gap-x-8 gap-y-2 text-center sm:grid-cols-1 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-3">
-                            <li>
-                                <div class="-mt-4 container" style="height: 320px;"> 
-                                    <img class="mx-auto h-full" src="equipo/Mary.png" alt="" style="object-fit: cover;"> 
-                                </div>
-                                <h3 class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">Mary Santiago</h3>
-                                <p class="text-sm leading-6 text-gray-600">Coordinador de beneficios</p>
-                                <div class="-mt-px flex divide-x divide-gray-200">
-                                    <div class="flex w-0 flex-1">
-                                        <a href="mailto:coordinadorbeneficios@sanmartinbakery.com"
-                                            class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900">
-                                            <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
-                                                fill="currentColor" aria-hidden="true">
-                                                <path
-                                                    d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                                                <path
-                                                    d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                                            </svg>
-                                            Email
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="absolute inset-0 flex items-center" aria-hidden="true">
-                      <div class="w-full border-t border-gray-300"></div>
-                    </div>
-                  </div> --}}
                  {{-- Desarrollo Humano Dallas --}}
                  <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <p class="mt-12 text-xl leading-8 text-black">Desarrollo Humano Dallas</p>

@@ -64,35 +64,6 @@
                     @endforeach
                 </div>
 
-                {{-- <div class="space-y-6 border-t border-gray-200 px-4 py-6">
-                    <div class="flow-root">
-                        <a href="#" class="-m-2 block p-2 font-medium text-white">Company</a>
-                    </div>
-                    <div class="flow-root">
-                        <a href="#" class="-m-2 block p-2 font-medium text-white">Stores</a>
-                    </div>
-                </div> --}}
-
-                {{-- <div class="space-y-6 border-t border-gray-200 px-4 py-6">
-
-                    @if(session()->has('customerSession'))
-                    <div class="flow-root">
-                        <span class="-m-2 block p-2 font-medium text-gray-900">{{ session('customerSession')['first_name'] }} {{ session('customerSession')['last_name'] }}</span>
-                    </div>
-                    <div class="flow-root">
-                        <a href="{{ route('customerLogout') }}" class="-m-2 block p-2 font-medium text-gray-900">Logout</a>
-                    </div>
-                @else
-                    <div class="flow-root">
-                        <a href="{{ route('customerLogin') }}" class="-m-2 block p-2 font-medium text-gray-900">Sign in</a>
-                    </div>
-                    <div class="flow-root">
-                        <a href="{{ route('customerRegistration') }}" class="-m-2 block p-2 font-medium text-gray-900">Create account</a>
-                    </div>
-                @endif
-
-                </div> --}}
-
             </div>
         </div>
     </div>
@@ -235,25 +206,6 @@
                           {{-- </div> --}}
                     @endforeach
                 </div>
-                    {{-- <div class="border-t border-gray-200 px-4 py-6 sm:px-6">
-                       <div class="flex justify-between text-base font-medium text-gray-900">
-                         <p>Subtotal</p>
-                           <p>${{ number_format($data->subTotal, 2) }}</p>
-                       </div>
-                       <div class="mt-6">
-                         <a href="{{ route('checkout') }}" class="flex items-center justify-center rounded-md border border-transparent sm-bk-blue px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-blue-500">
-                           Checkout</a>
-                       </div>
-                       <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
-                         <p>
-                           or
-                           <button type="button" class="font-medium text-blue-600 hover:text-blue-500" @click="openCartModal = false">
-                             Continue Shopping
-                             <span aria-hidden="true"> &rarr;</span>
-                           </button>
-                         </p>
-                       </div>
-                     </div> --}}
 
                     @else
 

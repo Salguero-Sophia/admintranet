@@ -149,13 +149,6 @@
                 <input type="number" value="{{ $categoryImage->order }}" name="order" id="order" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
               </div>
             </div>
-
-            {{-- <div class="mt-4">
-              <label for="href" class="block text-sm font-medium leading-6 text-gray-900">Link</label>
-              <div class="mt-2">
-                <input type="text" value="{{ $categoryImage->href }}" name="href" id="href" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-              </div>
-            </div> --}}
         
             <div class="mt-4">
               <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">Cover photo</label>

@@ -49,66 +49,6 @@
 
     <main>
 
-        <!-- Hero section -->
-        {{-- <div class="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-            <div class="sm:flex sm:items-baseline sm:justify-between">
-                <h2 id="category-heading" class="text-2xl font-bold tracking-tight text-gray-900">Información</h2>
-            </div>
-
-            <div class="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-3 sm:gap-x-6 sm:gap-y-0 lg:gap-x-8">
-
-                @foreach ($bannerImages as $bannerImage)
-
-                    <div class="group relative mb-8">
-                        <div data-aos="fade-up" data-aos-duration="500"
-                            class="h-96 w-full overflow-hidden rounded-lg sm:aspect-h-3 sm:aspect-w-2 group-hover:opacity-75 sm:h-auto">
-                            <img  src="{{ $bannerImage->image_path }}" alt="first-banner"
-                                class="h-full w-full object-cover object-center">
-                        </div>
-                        
-                    </div>
-                    
-                @endforeach
-                
-            </div>
-
-            </div> --}}
-
-        <!-- Featured section -->
-
-        {{-- <section aria-labelledby="cause-heading">
-            <div class="relative bg-gray-800 px-6 py-32 sm:px-12 sm:py-40 lg:px-16">
-                <div class="absolute inset-0 overflow-hidden">
-                    <img src="{{ $reserve_image_path }}" alt="reserve-now"
-                        class="h-full w-full object-cover object-center">
-                </div>
-                <div aria-hidden="true" class="absolute inset-0 bg-gray-900 bg-opacity-50"></div>
-                <div data-aos="zoom-in-down" data-aos-duration="1000"
-                    class="relative mx-auto flex max-w-3xl flex-col items-center text-center">
-                    <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Reserve now!</h2>
-                    <div class="mt-6">
-                        <script type='text/javascript'
-                            src='//www.opentable.com/widget/reservation/loader?rid=1085668&type=standard&theme=standard&color=5&dark=false&iframe=true&domain=com&lang=en-US&newtab=true&ot_source=Restaurant%20website&cfe=true'>
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
-
-        {{-- @foreach ($bannerImages as $bannerImage)
-
-            <div class="group relative mb-8">
-                <div data-aos="fade-up" data-aos-duration="500"
-                    class="h-96 w-full overflow-hidden rounded-lg sm:aspect-h-3 sm:aspect-w-2 group-hover:opacity-75 sm:h-auto cursor-pointer"
-                    @click="openModal = true; modalImage = '{{ $bannerImage->image_path }}'">
-                    <img src="{{ $bannerImage->image_path }}" alt="first-banner"
-                        class="h-full w-full object-cover object-center">
-                </div>
-            </div>
-
-        @endforeach --}}
-
-
         <div class="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8" x-data="{ openModal: false, modalImage: '' }">
             <div class="sm:flex sm:items-baseline sm:justify-between">
                 <h2 id="category-heading" class="text-2xl font-bold tracking-tight text-gray-900">Información</h2>

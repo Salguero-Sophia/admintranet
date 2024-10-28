@@ -2,12 +2,6 @@
     $menu = [
 
         (object) [
-            'icon' => ' <img width="48" height="48" src="https://img.icons8.com/color/48/usa-circular.png" alt="guatemala-circular" />',
-            'name'   => '',
-            'url'    => route('careers'),
-            'target' => '',
-        ],
-        (object) [
             'icon' => '<svg class="h-5 w-5 mx-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
@@ -26,28 +20,8 @@
                     'url' => route('guatemala'),
                 ],
                 (object) [
-                    'name' => 'Conoce a nuestro equipo',
-                    'url' => route('guatemala'),
-                ],
-                (object) [
-                    'name' => 'Comunicación interna',
-                    'url' => route('guatemala'),
-                ],
-                (object) [
-                    'name' => 'Extensiones corporativas',
-                    'url' => route('guatemala'),
-                ],
-                (object) [
                     'name' => 'Extesiones de Tiendas',
-                    'url' => route('guatemala'),
-                ],
-                (object) [
-                    'name' => 'Nómina',
-                    'url' => route('guatemala'),
-                ],
-                (object) [
-                    'name' => 'Preguntas frecuentes',
-                    'url' => route('guatemala'),
+                    'url' => route('tiend'),
                 ],
             ]
         ],
@@ -80,56 +54,15 @@
             'icon' => '<svg class="h-5 w-5 mx-2 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                             fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" />
-                            <circle cx="7" cy="17" r="2" />
-                            <circle cx="17" cy="17" r="2" />
-                            <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
-                            <path d="M6 10h4m-2 -2v4" />
-                        </svg>',
-            'name'   => 'Salud y Seguridad',
-            'url'    => null,
-            'target' => '',
-            'submenu' => [
-                (object) [
-                    'name' => 'Portal SSO',
-                    'url' => route('sso'),
-                ],
-                (object) [
-                    'name' => 'Investigación de accidentes',
-                    'url' => url('https://forms.office.com/r/N9ALmMTXbE',),
-                ],
-            ]
-        ],
-        (object) [
-            'icon' => '<svg class="h-5 w-5 mx-2 text-white" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                            fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" />
                             <path d="M8 9l5 5v7h-5v-4m0 4h-5v-7l5 -5m1 1v-6a1 1 0 0 1 1 -1h10a1 1 0 0 1 1 1v17h-8" />
                             <line x1="13" y1="7" x2="13" y2="7.01" />
                             <line x1="17" y1="7" x2="17" y2="7.01" />
                             <line x1="17" y1="11" x2="17" y2="11.01" />
                             <line x1="17" y1="15" x2="17" y2="15.01" />
                         </svg>',
-            'name'   => 'Universidad San Martín',
-            'url'    => null,
-            'target' => '',
-            'submenu' => [
-                (object) [
-                    'name' => 'USM Guatemala',
-                    'url' => url('http://192.168.111.212/usm/course/index.php?categoryid=241',),
-                ],
-                (object) [
-                    'name' => 'USM Administrativos',
-                    'url' => url('http://192.168.111.212/usm/course/index.php?categoryid=384',),
-                ],
-                (object) [
-                    'name' => 'USM Cielito Lindo',
-                    'url' => url('http://192.168.111.212/usm/course/index.php?categoryid=176',),
-                ],
-                (object) [
-                    'name' => 'USM Planta',
-                    'url' => url('http://192.168.111.212/usm/course/index.php?categoryid=100',),
-                ],
-            ]
+            'name' => 'Universidad San Martín',
+            'url'    => url('http://192.168.111.212/usm/course/index.php?categoryid=263',),
+            'target' => '_blank',
         ],
     ];
 @endphp
@@ -162,17 +95,15 @@
                 </div>
 
                 <!-- Menu -->
-
                 <div class="space-y-6 border-t py-6">
                     @foreach ($menu as $index => $page)
                         <div x-data="{ openSubmenu{{ $index }}: false }" class="relative group">
-                            <a @click="openSubmenu{{ $index }} = !openSubmenu{{ $index }}" target="{{ $page->target }}"
-                            class="flex items-center text-sm font-medium text-white hover:text-indigo-400">
-                                {!! $page->icon !!}
-                                {{ $page->name }}
-                                @if (isset($page->submenu))
-                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                        class="ml-1 h-8 w-8">
+                            @if (isset($page->submenu))
+                                <!-- Si hay submenú -->
+                                <a @click="openSubmenu{{ $index }} = !openSubmenu{{ $index }}" class="flex items-center text-sm font-medium text-white hover:text-indigo-400 cursor-pointer">
+                                    {!! $page->icon !!}
+                                    {{ $page->name }}
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" class="ml-1 h-8 w-8">
                                         <style>
                                             .slide-11 {
                                                 animation: slide-11 1s infinite alternate both cubic-bezier(1, -0.01, 0, 0.98);
@@ -183,13 +114,10 @@
                                                 }
                                             }
                                         </style>
-                                        <path class="slide-11" fill="#ffffff"
-                                            d="M6.832 10.516a.857.857 0 111.097-1.317l4.594 3.828L17.117 9.2a.857.857 0 011.098 1.317l-5.132 4.276a.853.853 0 01-.933.123.85.85 0 01-.187-.123l-5.131-4.276z" />
+                                        <path class="slide-11" fill="#ffffff" d="M6.832 10.516a.857.857 0 111.097-1.317l4.594 3.828L17.117 9.2a.857.857 0 011.098 1.317l-5.132 4.276a.853.853 0 01-.933.123.85.85 0 01-.187-.123l-5.131-4.276z" />
                                     </svg>
-                                @endif
-                            </a>
-
-                            @if (isset($page->submenu))
+                                </a>
+                                <!-- Submenú desplegable -->
                                 <div x-show="openSubmenu{{ $index }}" class="relative items-center left-0 w-48 bg-white opacity-90 shadow-lg" 
                                     x-transition:enter="transition ease-out duration-200"
                                     x-transition:enter-start="opacity-0 transform scale-95"
@@ -203,11 +131,15 @@
                                         </a>
                                     @endforeach
                                 </div>
+                            @else
+                                <!-- Si no hay submenú, redirigir a su URL -->
+                                <a href="{{ $page->url }}" target="{{ $page->target }}" class="flex items-center text-sm font-medium text-white hover:text-indigo-400">
+                                    {!! $page->icon !!}
+                                    {{ $page->name }}
+                                </a>
                             @endif
                         </div>
                     @endforeach
-
-
                 </div>
 
             </div>
@@ -215,7 +147,7 @@
     </div>
 
     {{-- Menu --}}
-    <nav aria-label="Top" class="relative z-20 bg-[#003B7A] backdrop-blur-xl backdrop-filter ">
+    <nav aria-label="Top" class="relative z-20 bg-[#003B7A] backdrop-blur-xl backdrop-filter">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-20 items-center">
                 <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
@@ -232,23 +164,34 @@
 
                 <!-- Logo -->
                 <div class="ml-4 flex lg:ml-0 w-auto lg:hidden">
+                   
+                    <a href="{{ route('usa') }}">
+                        <span class="sr-only">San Martin Bakery | Intranet</span>
+                        <img class="h-13 w-auto" src="https://img.icons8.com/color/48/usa-circular.png" alt="Dallas Logo">
+                    </a>
+
                     <a href="{{ route('home') }}">
                         <span class="sr-only">San Martin Bakery | Intranet</span>
-                        <img class="h-8 w-auto lg:hidden" src="{{ asset('logoBlancoDallas.svg') }}"
+                        <img class="h-8 w-auto mt-2  lg:hidden mx-6" src="{{ asset('logoBlancoDallas.svg') }}"
                             alt="Mobile Logo">
                     </a>
                 </div>
 
-                <div class="ml-4 lg:ml-0 hidden lg:block">
+                <div class="ml-4 lg:ml-0 hidden lg:flex items-center space-x-4">
+
                     <a href="{{ route('home') }}">
                         <span class="sr-only">San Martin Bakery | Intranet</span>
-                        <img class="h-8 w-auto hidden lg:block" src="{{ asset('logo-navbar.svg') }}"
-                            alt="Desktop Logo">
+                        <img class="h-8 w-auto" src="{{ asset('logo-navbar.svg') }}" alt="Desktop Logo">
                     </a>
-                </div>
+
+                    <a href="{{ route('usa') }}">
+                        <span class="sr-only">San Martin Bakery | Intranet</span>
+                        <img class="h-13 w-auto" src="https://img.icons8.com/color/48/usa-circular.png" alt="Dallas Logo">
+                    </a>
+                </div>                
 
                 <!-- Flyout menus -->
-                <div class="hidden lg:ml-8 lg:block lg:self-stretch items-center">
+                <div class="hidden lg:ml-20 lg:block lg:self-stretch items-center">
                     <div class="flex h-full items-center  space-x-8">
                         @foreach ($menu as $page)
                             <div class="relative group">

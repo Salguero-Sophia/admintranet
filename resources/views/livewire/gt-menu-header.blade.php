@@ -1,12 +1,5 @@
 @php
     $menu = [
-
-        (object) [
-            'icon' => ' <img width="48" height="48" src="https://img.icons8.com/color/48/guatemala-circular.png" alt="guatemala-circular" />',
-            'name'   => '',
-            'url'    => route('careers'),
-            'target' => '',
-        ],
         (object) [
             'icon' => '<svg class="h-5 w-5 mx-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -31,15 +24,15 @@
                 ],
                 (object) [
                     'name' => 'Comunicación interna',
-                    'url' => route('nomina'),
+                    'url' => route('interna'),
                 ],
                 (object) [
                     'name' => 'Extensiones corporativas',
-                    'url' => route('guatemala'),
+                    'url' => route('planta'),
                 ],
                 (object) [
                     'name' => 'Extesiones de Tiendas',
-                    'url' => route('guatemala'),
+                    'url' => route('tienda'),
                 ],
                 (object) [
                     'name' => 'Nómina',
@@ -47,7 +40,7 @@
                 ],
                 (object) [
                     'name' => 'Preguntas frecuentes',
-                    'url' => route('guatemala'),
+                    'url' => route('preguntas'),
                 ],
             ]
         ],
@@ -166,13 +159,12 @@
                 <div class="space-y-6 border-t py-6">
                     @foreach ($menu as $index => $page)
                         <div x-data="{ openSubmenu{{ $index }}: false }" class="relative group">
-                            <a @click="openSubmenu{{ $index }} = !openSubmenu{{ $index }}" target="{{ $page->target }}"
-                            class="flex items-center text-sm font-medium text-white hover:text-indigo-400">
-                                {!! $page->icon !!}
-                                {{ $page->name }}
-                                @if (isset($page->submenu))
-                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                        class="ml-1 h-8 w-8">
+                            @if (isset($page->submenu))
+                                <!-- Si hay submenú -->
+                                <a @click="openSubmenu{{ $index }} = !openSubmenu{{ $index }}" class="flex items-center text-sm font-medium text-white hover:text-indigo-400 cursor-pointer">
+                                    {!! $page->icon !!}
+                                    {{ $page->name }}
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" class="ml-1 h-8 w-8">
                                         <style>
                                             .slide-11 {
                                                 animation: slide-11 1s infinite alternate both cubic-bezier(1, -0.01, 0, 0.98);
@@ -183,13 +175,10 @@
                                                 }
                                             }
                                         </style>
-                                        <path class="slide-11" fill="#ffffff"
-                                            d="M6.832 10.516a.857.857 0 111.097-1.317l4.594 3.828L17.117 9.2a.857.857 0 011.098 1.317l-5.132 4.276a.853.853 0 01-.933.123.85.85 0 01-.187-.123l-5.131-4.276z" />
+                                        <path class="slide-11" fill="#ffffff" d="M6.832 10.516a.857.857 0 111.097-1.317l4.594 3.828L17.117 9.2a.857.857 0 011.098 1.317l-5.132 4.276a.853.853 0 01-.933.123.85.85 0 01-.187-.123l-5.131-4.276z" />
                                     </svg>
-                                @endif
-                            </a>
-
-                            @if (isset($page->submenu))
+                                </a>
+                                <!-- Submenú desplegable -->
                                 <div x-show="openSubmenu{{ $index }}" class="relative items-center left-0 w-48 bg-white opacity-90 shadow-lg" 
                                     x-transition:enter="transition ease-out duration-200"
                                     x-transition:enter-start="opacity-0 transform scale-95"
@@ -203,12 +192,17 @@
                                         </a>
                                     @endforeach
                                 </div>
+                            @else
+                                <!-- Si no hay submenú, redirigir a su URL -->
+                                <a href="{{ $page->url }}" target="{{ $page->target }}" class="flex items-center text-sm font-medium text-white hover:text-indigo-400">
+                                    {!! $page->icon !!}
+                                    {{ $page->name }}
+                                </a>
                             @endif
                         </div>
                     @endforeach
-
-
                 </div>
+                
 
             </div>
         </div>
@@ -232,20 +226,31 @@
 
                 <!-- Logo -->
                 <div class="ml-4 flex lg:ml-0 w-auto lg:hidden">
+                   
+                    <a href="{{ route('careers') }}">
+                        <span class="sr-only">San Martin Bakery | Intranet</span>
+                        <img class="h-13 w-auto" src="https://img.icons8.com/color/48/guatemala-circular.png" alt="GT Logo">
+                    </a>
+
                     <a href="{{ route('home') }}">
                         <span class="sr-only">San Martin Bakery | Intranet</span>
-                        <img class="h-8 w-auto lg:hidden" src="{{ asset('logoBlancoDallas.svg') }}"
+                        <img class="h-8 w-auto mt-2 lg:hidden mx-6" src="{{ asset('logoBlancoDallas.svg') }}"
                             alt="Mobile Logo">
                     </a>
                 </div>
 
-                <div class="ml-4 lg:ml-0 hidden lg:block">
+                <div class="ml-4 lg:ml-0 hidden lg:flex items-center space-x-4">
+
                     <a href="{{ route('home') }}">
                         <span class="sr-only">San Martin Bakery | Intranet</span>
-                        <img class="h-8 w-auto hidden lg:block" src="{{ asset('logo-navbar.svg') }}"
-                            alt="Desktop Logo">
+                        <img class="h-8 w-auto" src="{{ asset('logo-navbar.svg') }}" alt="Desktop Logo">
                     </a>
-                </div>
+
+                    <a href="{{ route('careers') }}">
+                        <span class="sr-only">San Martin Bakery | Intranet</span>
+                        <img class="h-13 w-auto" src="https://img.icons8.com/color/48/guatemala-circular.png" alt="GT Logo">
+                    </a>
+                </div>          
 
                 <!-- Flyout menus -->
                 <div class="hidden lg:ml-8 lg:block lg:self-stretch items-center">

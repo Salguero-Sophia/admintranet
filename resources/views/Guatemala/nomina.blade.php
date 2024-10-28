@@ -1,21 +1,7 @@
 <x-gtfrontEndLayout title="Nomina" x-data={}>
 
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
-
-
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    @vite('resources/css/app.css')
-
-    </script>
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-</head>
-
-<body>
-    <div class="max-h-screen flex flex-col">
+<main>
+    <div class="flex flex-col">
         {{-- mensaje de reccibido etica --}}
     @if (session('success'))
     <div aria-live="assertive" class="pointer-events-none fixed inset-0 flex items-end px-4 py-6 sm:items-start sm:p-6 z-50">
@@ -443,6 +429,6 @@
     });
 </script>
 
-</body>
+</main>
 
 </x-gtfrontEndLayout>

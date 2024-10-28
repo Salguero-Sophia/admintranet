@@ -81,26 +81,10 @@ Route::get('promotions', [StaticContentCtrl::class, 'Promotions'])->name('promot
 Route::get('catering', [StaticContentCtrl::class, 'Catering'])->name('catering');
 Route::get('nationwide', [StaticContentCtrl::class, 'Nationwide'])->name('nationwide');
 
-/* Careers */
-Route::get('careers', [StaticContentCtrl::class, 'Careers'])->name('careers');
-Route::get('careersList/{type_id}', [CareersCtrl::class, 'CareersList'])->name('careersList');
-Route::get('careers-apply/{career_id}', [StaticContentCtrl::class, 'CareersApply'])->name('careersApply');
+    // Salvador
+    Route::get('/el-salvador',[ExtenController::class,'salvador'])->name('salvador');
+    Route::get('/extensiones-tiendas',[ExtenController::class,'tiendas'])->name('tiendas');
 
-/* Applicants */
-Route::post('applicant-add', [ApplicantsCtrl::class, 'ApplicantAdd'])->name('applicantAdd');
-
-Route::post('pay', [CartCtrl::class, 'OrderConfirm'])->name('pay');
-
-
-Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
-
-    // Route::get('/dashboard', function () {
-    //     return view('dashboard');
-    // })->name('dashboard');
-
-    /* HomePage Editor */
-    Route::get('home-page-editor', [HomePageCtrl::class, 'HomePageEditor'])->name('homePageEditor');
-    Route::post('change-image', [HomePageCtrl::class, 'ChangeImage'])->name('changeImage');
 
     // Guatemala
 
@@ -122,11 +106,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::post('/boton-etica', [ExtenController::class, 'SendEtica'])->name('sendEtica');
 
-
-    // Salvador
-    Route::get('/sv',[ExtenController::class,'salvador'])->name('salvador');
-    Route::get('/extensiones-tiendas',[ExtenController::class,'tiendas'])->name('tiendas');
-
     // Dallas
     Route::get('/usa',[ExtenController::class,'usa'])->name('usa');
     Route::get('/extension-tienda',[ExtenController::class,'tiend'])->name('tiend');
@@ -135,4 +114,24 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/portal-sso',[ExtenController::class,'sso'])->name('sso');  
     Route::get('/documentos-sso',[ExtenController::class,'docsso'])->name('docsso');
 
+/* Careers */
+Route::get('guatemala', [StaticContentCtrl::class, 'Careers'])->name('careers');
+Route::get('careersList/{type_id}', [CareersCtrl::class, 'CareersList'])->name('careersList');
+Route::get('careers-apply/{career_id}', [StaticContentCtrl::class, 'CareersApply'])->name('careersApply');
+
+/* Applicants */
+Route::post('applicant-add', [ApplicantsCtrl::class, 'ApplicantAdd'])->name('applicantAdd');
+
+Route::post('pay', [CartCtrl::class, 'OrderConfirm'])->name('pay');
+
+
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
+
+    // Route::get('/dashboard', function () {
+    //     return view('dashboard');
+    // })->name('dashboard');
+
+    /* HomePage Editor */
+    Route::get('home-page-editor', [HomePageCtrl::class, 'HomePageEditor'])->name('homePageEditor');
+    Route::post('change-image', [HomePageCtrl::class, 'ChangeImage'])->name('changeImage');
 });

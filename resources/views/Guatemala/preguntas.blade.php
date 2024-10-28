@@ -126,7 +126,7 @@
 </head>
 
 <body>
-    <div class="max-h-screen flex flex-col">
+    <div class="flex flex-col">
         <!--Nav-->
         <nav id="header" class="sm-bk-blue p-1 z-50">
             <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">

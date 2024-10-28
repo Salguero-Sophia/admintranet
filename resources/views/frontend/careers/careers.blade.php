@@ -81,7 +81,7 @@
                             </div>
                         </div>
 
-                        <li class="rounded-2xl bg-[#003B7A] px-8 py-10 cursor-pointer" onclick="openModal()">
+                        <li class="rounded-2xl bg-[#003B7A] opacity-90 px-8 py-10 cursor-pointer" onclick="openModal()">
                             <img class="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56" src="iconos/Icono de información.svg" alt="">
                             <h3 class="mt-6 text-2xl font-semibold leading-7 tracking-tight text-white">Información</h3>
                         </li>
@@ -108,7 +108,7 @@
                             </div>
                         </div>
 
-                        <li class="rounded-2xl bg-[#003B7A] px-8 py-10 cursor-pointer" onclick="openMod()">
+                        <li class="rounded-2xl bg-[#003B7A] opacity-90 px-8 py-10 cursor-pointer" onclick="openMod()">
                             <img class="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56" src="iconos/Icono de actividades.svg" alt="">
                             <h3 class="mt-6 text-2xl font-semibold leading-7 tracking-tight text-white">Actividades</h3>
                         </li>
@@ -130,7 +130,7 @@
            
 
             {{-- SECCION 4 --}}
-            <div class="overflow-hidden bg-[#003B7A] py-8">
+            <div class="overflow-hidden bg-[#003B7A] opacity-90 py-8">
 
                 <div class="">
                     <div class="mx-auto max-w-7xl px-6 text-center lg:px-8">

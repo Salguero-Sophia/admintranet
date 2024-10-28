@@ -50,45 +50,44 @@
     @endif
 
     {{-- Promos --}}
-    <div class="container mx-auto px-10 pt-36 sm:px-20">
+    <div class="container mx-auto px-10 py-6 sm:px-20">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
 
             <!-- Facebook -->
             <div class="px-4 mb-8">
-                <div class="divide-y divide-gray-200 rounded-lg opacity-90 text-center shadow">
-                    <img class="w-full shadow-xl rounded-3xl" src="interna/face.png" alt="i4">
+                <div class="rounded-lg text-center">
+                    <img class="w-full rounded-3xl" src="interna/face.png" alt="i4">
 
                 </div>
             </div>
 
             <!-- Linked in -->
             <div class="w-full px-4 mb-8">
-                <div class="divide-y divide-gray-200 rounded-lg opacity-90 text-center shadow">
-                    <img class="w-full shadow-xl rounded-3xl" src="interna/link.png" alt="i4">
+                <div class="rounded-lg opacity-90 text-center">
+                    <img class="w-full rounded-3xl" src="interna/link.png" alt="i4">
 
                 </div>
             </div>
 
 
     <!-- canales de comunicación interna -->
-    <div class="w-full px-4 mb-8">
+    <div class="-h-40 px-4 mb-8">
         <!-- Enlace para abrir el PDF en una nueva pestaña -->
-        <a id="pdfLink" href="interna/Guía de utilización  de canales de comunicación interna.pdf" target="_blank" class="sm-bk-blue card relative overflow-hidden border rounded-lg shadow-lg flex flex-col hover:bg-blue-300">
-            <img class="w-1/2 h-1/2 mx-auto my-6" src="iconos/Icono de politica de comunicación.svg" alt="Ícono PDF">
-            <p class="mx-auto rounded-xl lg:text-lg sm:text-sm px-2 lg:px-8 font-semibold text-white"> Guía de
-                canales de comunicación interna</p>
+        <a id="pdfLink" href="interna/Guía de utilización  de canales de comunicación interna.pdf" target="_blank" class="sm-bk-blue card relative overflow-hidden rounded-3xl shadow-lg flex flex-col hover:bg-blue-300">
+            <img class="mx-auto my-6" src="iconos/Icono de politica de comunicación.svg" alt="Ícono PDF">
+            <p class="text-center -mt-8 mb-6 lg:text-lg sm:text-sm px-2 lg:px-8 font-semibold text-white"> Guía de canales de comunicación interna</p>
         </a>
     </div>
 
     <!-- Contenido del modal -->
     <div id="modalContainer12" class="hidden fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50">
-        <div class="relative w-4/5 mx-auto mt-20">
-            <div class="bg-white rounded-lg shadow-lg">
+        <div class="relative w-11/12 mx-auto py-8">
+            <div class=" rounded-lg shadow-lg">
                 <!-- Contenido del modal -->
                 <div class="p-4">
                     <!-- Botón para cerrar el modal -->
                     <button id="closeModalBtn12"
-                        class="absolute top-0 right-0 p-2 text-xl text-gray-600 hover:text-gray-800 focus:outline-none">
+                        class="absolute top-10 right-20 text-5xl text-red-500 hover:text-red-200 focus:outline-none">
                         &times;
                     </button>
                     <!-- Contenedor del PDF -->
